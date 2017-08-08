@@ -13,4 +13,9 @@
 
 var name = "Vinicius Antonio Vilaça Lara"
 var formattedName = HTMLheaderName.replace("%data%", name);
-$("#header").append(formattedName);
+
+
+var role = "QA Engineer"
+var formattedRole = HTMLheaderRole.replace("%data%", role)
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
