@@ -13,10 +13,21 @@ var bio = {
 };
 
 var work = {
-    "position": "QA Engineer",
-    "employer": "Avenue Code",
-    "years": "2 years",
-    "city": "Belo Horizonte"
+    "jobs":[
+    
+        {
+            "position": "QA Engineer",
+            "employer": "Avenue Code",
+            "years": "2 years",
+            "city": "Belo Horizonte"
+        },
+        {
+            "position": "Software Engineer",
+            "employer": "CI&T",
+            "years": "1 year",
+            "city": "Belo Horizonte"
+        }
+    ]
 };
 
 var education = {
@@ -31,7 +42,6 @@ var education = {
             "city": "Belo Horizonte",
             "degree": "Masters"
         }
-
     ],
     "onlineCourses": [
         {
@@ -55,9 +65,20 @@ var projects = {
     ]
 };
 
+for(job in work) {
+    //var formattedJobTitle = HTMLworkStart.replace("", job["position"]);
+    $("#workExperience").append(HTMLworkStart);
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", job["employer"]);
+    var formattedWorkTitle = HTMLworkTitle.replace("%data%", job["position"]);
+
+    $("#workExperience").append(formattedEmployer);
+    
+    
+}
+
 if (bio["skills"] != null){
-    var formattedSkills = HTMLskillsStart.replace("%data%", bio["skills"]);
-    $("#header").append(formattedSkills);
+    //var formattedSkills = HTMLskillsStart.replace("%data%", bio["skills"]);
+    $("#header").append(HTMLskillsStart);
     
     var formattedSkillsNames = HTMLskills.replace("%data%", bio["skills"][0]);
     $("#skills").append(formattedSkillsNames);
@@ -66,6 +87,9 @@ if (bio["skills"] != null){
     var formattedSkillsNames = HTMLskills.replace("%data%", bio["skills"][2]);
     $("#skills").append(formattedSkillsNames);
 
-} else {
+ 
 
+} else {
+console.log("There is no skills");
 }
+
