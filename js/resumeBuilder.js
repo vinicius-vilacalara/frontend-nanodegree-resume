@@ -18,14 +18,16 @@ var work = {
         {
             "position": "QA Engineer",
             "employer": "Avenue Code",
-            "years": "2 years",
-            "city": "Belo Horizonte"
+            "years": "October/2017 - Now",
+            "city": "Belo Horizonte",
+            "description": "Working mostly with automation tests using Specflow and C# but also helping the PDMs writing the stories and the BDD scenarios.Additionally, I have been working executing functional tests on PETE Client solution"
         },
         {
             "position": "Software Engineer",
             "employer": "CI&T",
-            "years": "1 year",
-            "city": "Belo Horizonte"
+            "years": "August 2015 - September 2016",
+            "city": "Belo Horizonte",
+            "description": "Company provides the back-end development of more than 400 websites around the world for the Coca-Cola brands using the Adobe Experience Manager (AEM).● Test case and Test Plan preparation using Testlink basing on user stories ● Specification and preparation of test data and environment. ● Execution of manual, exploratory and automated tests. ● Development of automated tests using Java and Selenium WebDriver implementing the Page Objects and Page Factory design patterns."
         }
     ]
 };
@@ -76,13 +78,9 @@ for(jobs in work.jobs) {
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[jobs].employer);
     var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[jobs].position);
 
-    $("#workExperience").append(formattedEmployer);
-    $("#workExperience").append(formattedWorkTitle);
+    var formattedEmployerTitle = formattedEmployer + formattedWorkTitle;
     
-    if($("work-entry:last")){
-        var employerWorkTitle = formattedEmployer + formattedWorkTitle;
-        console.log(employerWorkTitle);
-    }
+    $(".work-entry:last").append(formattedEmployerTitle);
     
 }
 
