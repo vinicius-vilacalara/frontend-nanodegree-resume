@@ -60,19 +60,29 @@ var projects = {
             "title": "PETE Client",
             "dates": "2016-2017",
             "description": "GAP clothes production control system"
-
+        },
+        {
+            "title": "Coca Cola GO",
+            "dates": "2015-2016",
+            "description": "Coca Cola Brands sites around the world"
         }
+
     ]
 };
 
-for(job in work) {
-    //var formattedJobTitle = HTMLworkStart.replace("", job["position"]);
+for(jobs in work.jobs) {
+    
     $("#workExperience").append(HTMLworkStart);
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", job["employer"]);
-    var formattedWorkTitle = HTMLworkTitle.replace("%data%", job["position"]);
+    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[jobs].employer);
+    var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[jobs].position);
 
     $("#workExperience").append(formattedEmployer);
+    $("#workExperience").append(formattedWorkTitle);
     
+    if($("work-entry:last")){
+        var employerWorkTitle = formattedEmployer + formattedWorkTitle;
+        console.log(employerWorkTitle);
+    }
     
 }
 
