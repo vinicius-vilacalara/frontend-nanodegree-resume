@@ -79,10 +79,17 @@ for(jobs in work.jobs) {
     var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[jobs].position);
 
     var formattedEmployerTitle = formattedEmployer + formattedWorkTitle;
-    
+
     $(".work-entry:last").append(formattedEmployerTitle);
+
+    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[jobs].years);
+    $(".work-entry:last").append(formattedDates);
+
+    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[jobs].description);
+    $(".work-entry:last").append(formattedDescription);
     
 }
+
 
 if (bio["skills"] != null){
     //var formattedSkills = HTMLskillsStart.replace("%data%", bio["skills"]);
