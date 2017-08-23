@@ -72,7 +72,8 @@ var projects = {
     ]
 };
 
-for(jobs in work.jobs) {
+function displayWork() {
+    for(jobs in work.jobs) {
     
     $("#workExperience").append(HTMLworkStart);
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[jobs].employer);
@@ -88,7 +89,9 @@ for(jobs in work.jobs) {
     var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[jobs].description);
     $(".work-entry:last").append(formattedDescription);
     
+    }
 }
+displayWork(); 
 
 
 if (bio["skills"] != null){
