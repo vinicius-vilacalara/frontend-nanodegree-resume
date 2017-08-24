@@ -111,3 +111,16 @@ if (bio["skills"] != null){
 console.log("There is no skills");
 }
 
+ var name = "Vinicius Antonio Vilaça Lara"
+var formattedName = HTMLheaderName.replace("%data%", name);
+ var role = "QA Engineer"
+ var formattedRole = HTMLheaderRole.replace("%data%", role)
+ $("#header").prepend(formattedRole);
+ $("#header").prepend(formattedName); 
+
+ var buttonI18n = $('<button type = "button" id = "internationalizeButton"/>Internationalize</button>');
+ //<button type = "button" id = "internationalizeButton"/>Internationalize</button>
+ $("#main").append(buttonI18n);
+ console.log(buttonI18n);
+
+
