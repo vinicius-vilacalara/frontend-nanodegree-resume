@@ -9,7 +9,7 @@ var bio = {
   },
   "welcome-message": "Lorem ipsum Vinicius Lara",
   skills: ["Fontend", "Backend", "QA"],
-  bioPic: " images/fry.jpg"
+  bioPic: "images/fry.jpg"
 };
 
 var work = {
@@ -33,6 +33,22 @@ var work = {
   ]
 };
 
+var projects = {
+  projects: [
+    {
+      title: "PETE Client",
+      dates: "2016-2017",
+      description: "GAP clothes production control system"
+    },
+    {
+      title: "Coca Cola GO",
+      dates: "2015-2016",
+      description: "Coca Cola Brands sites around the world"
+    }
+  ]
+};
+
+
 var education = {
   schools: [
     {
@@ -52,21 +68,6 @@ var education = {
       school: "Udacity",
       dates: "2017",
       url: "http://www.udacity.com/course/ud804"
-    }
-  ]
-};
-
-var projects = {
-  projects: [
-    {
-      title: "PETE Client",
-      dates: "2016-2017",
-      description: "GAP clothes production control system"
-    },
-    {
-      title: "Coca Cola GO",
-      dates: "2015-2016",
-      description: "Coca Cola Brands sites around the world"
     }
   ]
 };
@@ -100,9 +101,8 @@ function displayWork() {
 displayWork();
 
 if (bio["skills"] != null) {
-  //var formattedSkills = HTMLskillsStart.replace("%data%", bio["skills"]);
   $("#header").append(HTMLskillsStart);
-
+  
   var formattedSkillsNames = HTMLskills.replace("%data%", bio["skills"][0]);
   $("#skills").append(formattedSkillsNames);
   var formattedSkillsNames = HTMLskills.replace("%data%", bio["skills"][1]);
@@ -141,3 +141,24 @@ function inName(name) {
   return nameComplete;
   
 }
+
+
+ function displayProjects(){
+  for(project in projects.projects){
+    $("#projects").append(HTMLprojectStart);
+
+    var formattedProjectTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    $(".project-entry:last").append(formattedProjectTitle);
+
+    var formattedProjectDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    $(".project-entry:last").append(formattedProjectDates);
+
+    var formattedProjectsDescription = HTMLprojectDescription.replace("%data", projects.projects[project].description);
+    $(".project-entry:last").append(formattedProjectsDescription);
+
+  }
+
+};
+displayProjects();
+
+
